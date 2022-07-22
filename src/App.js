@@ -8,8 +8,10 @@ const App = () => {
   const [tasks, setTasks] = useState([])
 
   const handleSubmit = (text) => {
-    setTasks([...tasks, text])
+    if (text) {
+      setTasks([...tasks, text])
       console.log('Form submitted')
+    }
   }
 
   return (

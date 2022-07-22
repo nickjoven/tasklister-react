@@ -1,11 +1,12 @@
-import React from "react"
+import React, { useState } from "react"
 
-const TaskForm = () => {
+const TaskForm = ({ handleSubmit }) => {
+    const [text, setText] = useState('')
     return (
         <div>
-            <form>
+            <form onSubmit={(e) => { e.preventDefault(); handleSubmit(text) }}>
                 <label>Task Description:</label>
-                <input type='text' placeholder='Description'/>
+                <input type='text' onChange={(e) => { setText(e.target.value) }} placeholder='Description'/>
                 <input type='submit' value='Create New Task'/>
             </form>
         </div>

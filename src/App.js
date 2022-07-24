@@ -12,11 +12,18 @@ const App = () => {
     setTasks([...tasks, text])
   }
 
+  const handleDelete = (e) => {
+    setTasks([tasks.filter(word => {
+      return word != e.target.textContent
+    })])
+    e.target.remove()
+  }
+
   return (
     <div className="App">
       <Banner bannerText='Task Lister React' />
       <TaskForm handleSubmit={handleSubmit} />
-      <TaskList tasks={tasks} />
+      <TaskList tasks={tasks} handleDelete={handleDelete} />
     </div>
   );
 }

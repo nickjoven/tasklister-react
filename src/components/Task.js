@@ -1,6 +1,6 @@
-const Task = ({text}) => {
+const Task = ({text, handleDelete}) => {
     return (
-        <li>{text}</li>
+        <li onClick={(e) => {handleDelete(e)}}>{text}</li>
     )
 }
 

@@ -16,7 +16,6 @@ const App = () => {
     setTasks([tasks.filter(word => {
       return word != e.target.textContent
     })])
-    e.target.remove()
   }
 
   return (

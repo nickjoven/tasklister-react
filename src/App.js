@@ -39,7 +39,7 @@ const App = () => {
     // console.log(user)
   }
 
-  const handleEmailValidity = (name, value) => {
+  const handleEmailIsValid = (name, value) => {
     if (name === 'email') {
       if (value.includes('@')) {
       console.log(name, 'includes @')
@@ -54,7 +54,7 @@ const App = () => {
   
   const handleChange = (e) => {
     const { name, value } = e.target
-    handleEmailValidity(name, value)
+    handleEmailIsValid(name, value)
     setUser({
       ...user,
       [name]: value

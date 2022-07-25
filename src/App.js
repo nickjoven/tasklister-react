@@ -20,10 +20,10 @@ const initialUser = {
 
 const App = () => {
   const [user, setUser] = useState(initialUser)
-  const [emailValidity, setEmailValidity] = useState(false)
+  const [emailIsValid, setEmailIsValid] = useState(false)
 
   const handleSubmit = () => {
-    if (!emailValidity) {
+    if (!emailIsValid) {
       return alert('invalid email')
     } else {
       fetch('http://example.com/signup', {
@@ -43,10 +43,10 @@ const App = () => {
     if (name === 'email') {
       if (value.includes('@')) {
       console.log(name, 'includes @')
-      setEmailValidity(true)
+      setEmailIsValid(true)
       } else if (!value.includes('@')) {
         console.log(name, 'lacks @')
-        setEmailValidity(false)
+        setEmailIsValid(false)
       }
     } 
   }
@@ -67,7 +67,7 @@ const App = () => {
         e.preventDefault()
         handleSubmit()
         e.target.reset()
-        setuser(initialUser)
+        setUser(initialUser)
       }}>
         <label>User Registration: </label>
         <input type='text' onChange={handleChange} name='firstName' value={user.firstName} placeholder='John' />
